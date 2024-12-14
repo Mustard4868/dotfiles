@@ -20,9 +20,6 @@ HAS_WIDECHARS="false"
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
-# Autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 # Aliases
 alias ls="ls_extended"
 alias la="ls_extended -a"
@@ -45,6 +42,9 @@ setopt SHARE_HISTORY
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin_macchiato.omp.json)"
+
+# Autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # >>> juliaup initialize >>>
 
