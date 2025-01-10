@@ -1,0 +1,53 @@
+//   █     █░ ▄▄▄     ▓██   ██▓ ▄▄▄▄    ▄▄▄       ██▀███  
+//  ▓█░ █ ░█░▒████▄    ▒██  ██▒▓█████▄ ▒████▄    ▓██ ▒ ██▒
+//  ▒█░ █ ░█ ▒██  ▀█▄   ▒██ ██░▒██▒ ▄██▒██  ▀█▄  ▓██ ░▄█ ▒
+//  ░█░ █ ░█ ░██▄▄▄▄██  ░ ▐██▓░▒██░█▀  ░██▄▄▄▄██ ▒██▀▀█▄  
+//  ░░██▒██▓  ▓█   ▓██▒ ░ ██▒▓░░▓█  ▀█▓ ▓█   ▓██▒░██▓ ▒██▒
+//  ░ ▓░▒ ▒   ▒▒   ▓▒█░  ██▒▒▒ ░▒▓███▀▒ ▒▒   ▓▒█░░ ▒▓ ░▒▓░
+//    ▒ ░ ░    ▒   ▒▒ ░▓██ ░▒░ ▒░▒   ░   ▒   ▒▒ ░  ░▒ ░ ▒░
+//    ░   ░    ░   ▒   ▒ ▒ ░░   ░    ░   ░   ▒     ░░   ░ 
+//      ░          ░  ░░ ░      ░            ░  ░   ░     
+//                     ░ ░           ░                    
+{
+    "layer": "top",
+    "spacing": 10,
+    "width": "",
+    "height": 20,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "battery"
+    ],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "O",
+            "active": "X"
+        },
+        "persistent-workspaces": {
+            "*": 3
+        }
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰂄", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "format-charging": "󰂄 {capacity}%",
+        "format-full": "󰂄 {capacity}%",
+        "tooltip": "true",
+        "tooltip-format": "{capacity}%"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": "true",
+        "tooltip-format": "{:%A, %d %B %Y}"
+    }
+}
