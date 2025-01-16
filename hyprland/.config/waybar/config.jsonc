@@ -35,6 +35,12 @@
         }
     },
 
+    "custom/power": {
+        "format": "{icon}",
+        "format-icons": "⏻",
+        "exec": "shutdown -h now"
+    },
+
     "battery": {
         "bat": "BAT0",
         "format": "{icon} {capacity}%",
