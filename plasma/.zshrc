@@ -28,7 +28,6 @@ alias lla="ls_extended -la"
 alias ssh="kitten ssh"
 alias vi="nvim"
 alias vim="nvim"
-alias weather="curl wttr.in/Leeuwarden"
 
 # Keybinds
 bindkey "^[[3~" delete-char
