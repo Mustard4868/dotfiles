@@ -5,6 +5,8 @@ highlight = "#89b4fa"
 corner_radius = 10
 origin = top-right
 offset = (15, 15)
+font = "Noto Sans"
+icon_theme = "Papirus-Dark"
 
 [urgency_low]
 background = "#1e1e2e"

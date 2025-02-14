@@ -10,25 +10,28 @@
 //                     ░ ░           ░                    
 {
     "layer": "top",
-    "spacing": 10,
+    "spacing": 4,
     "width": "",
-    "height": 20,
+    "height": "",
 
     "modules-left": [
+        "custom/power",
+        "custom/badge",
         "hyprland/workspaces"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
+        "tray",
         "battery"
     ],
 
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "default": "O",
-            "active": "X"
+            "default": "○",
+            "active": "●"
         },
         "persistent-workspaces": {
             "*": 3
@@ -38,11 +41,17 @@
     "custom/power": {
         "format": "{icon}",
         "format-icons": "⏻",
-        "exec": "shutdown -h now"
+        "on-click": "wlogout",
+        "tooltip": "true",
+        "tooltip-format": "wlogout"
     },
 
     "battery": {
         "bat": "BAT0",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
         "format": "{icon} {capacity}%",
         "format-icons": ["󰂄", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "format-charging": "󰂄 {capacity}%",
