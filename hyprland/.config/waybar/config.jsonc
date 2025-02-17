@@ -15,7 +15,7 @@
     "height": "",
 
     "modules-left": [
-        "custom/power",
+        "custom/start",
         "custom/badge",
         "hyprland/workspaces"
     ],
@@ -38,9 +38,8 @@
         }
     },
 
-    "custom/power": {
-        "format": "{icon}",
-        "format-icons": "⏻",
+    "custom/start": {
+        "format": "   ",
         "on-click": "wlogout",
         "tooltip": "true",
         "tooltip-format": "wlogout"
