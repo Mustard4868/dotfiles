@@ -1,7 +1,7 @@
 [global]
-frame_color = "#89b4fa"
+frame_color = "#a6e3a1"
 separator_color= frame
-highlight = "#89b4fa"
+highlight = "#a6e3a1"
 corner_radius = 10
 origin = top-right
 offset = (15, 15)

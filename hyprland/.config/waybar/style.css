@@ -6,7 +6,7 @@
     color: @text;
 }
 
-@define-color secondary @blue;
+@define-color secondary @green;
 
 tooltip {
     background-color: @base;
@@ -17,7 +17,7 @@ tooltip {
     background: none;
 }
 
-#clock, #tray {
+#clock, #tray, #pulseaudio {
     background-color: @base;
     padding: 8px;
     border-radius: 14px;
@@ -60,12 +60,12 @@ tooltip {
     border: 3px solid @secondary;
 }
 
-#custom-start {
-    background-image: url('/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha-blue.png');
-    background-size: 50%;
+#custom-power {
+    background-color: @base;
+    background-image: url('/home/mustard/.config/waybar/icons/manjaro-mocha-green.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-color: @base;
+    background-size: 50%;
     border-radius: 14px;
     border: 3px solid @secondary;
     padding: 8px 14px 8px 14px;
