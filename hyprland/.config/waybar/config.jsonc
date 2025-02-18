@@ -10,12 +10,12 @@
 //                     ░ ░           ░                    
 {
     "layer": "top",
-    "spacing": 4,
+    "spacing": 2,
     "width": "",
     "height": "",
 
     "modules-left": [
-        "custom/start",
+        "custom/power",
         "custom/badge",
         "hyprland/workspaces"
     ],
@@ -24,6 +24,7 @@
     ],
     "modules-right": [
         "tray",
+        "pulseaudio",
         "battery"
     ],
 
@@ -38,8 +39,10 @@
         }
     },
 
-    "custom/start": {
-        "format": "   ",
+    "custom/power": {
+        //"format": "{icon}",
+        "format":"   ",
+        "format-icons": "⏻",
         "on-click": "wlogout",
         "tooltip": "true",
         "tooltip-format": "wlogout"
@@ -63,5 +66,22 @@
         "format": "{:%H:%M}",
         "tooltip": "true",
         "tooltip-format": "{:%A, %d %B %Y}"
+    },
+
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{icon}    {volume}%",
+        "format-bluetooth": "{icon}    {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
     }
 }

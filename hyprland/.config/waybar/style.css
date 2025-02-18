@@ -17,7 +17,7 @@ tooltip {
     background: none;
 }
 
-#clock, #tray {
+#clock, #tray, #pulseaudio {
     background-color: @base;
     padding: 8px;
     border-radius: 14px;
@@ -60,7 +60,7 @@ tooltip {
     border: 3px solid @secondary;
 }
 
-#custom-start {
+#custom-power {
     background-image: url('/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha-blue.png');
     background-size: 50%;
     background-position: center;
