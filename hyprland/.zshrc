@@ -21,10 +21,10 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # Aliases
-alias ls="ls_extended"
-alias la="ls_extended -a"
-alias ll="ls_extended -l"
-alias lla="ls_extended -la"
+alias ls="eza --icons"
+alias la="eza --icons -a"
+alias ll="eza --icons -l"
+alias lla="eza --icons -la"
 alias ssh="kitten ssh"
 alias vi="nvim"
 alias vim="nvim"
@@ -38,6 +38,8 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+
+setopt CORRECT
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin_mocha.omp.json)"
