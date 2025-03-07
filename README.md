@@ -1,11 +1,14 @@
-# Dotfiles
-My hyprland dotfiles that I've been working on!
+# Screenshots
+<div align="center">
+  <img src="screenshots/overview.png" width = 80%/>  
+</div>
 
 <details>
-<summary>Screenshots</summary>
-<img src="screenshots/overview.png"/>
-<img src="screenshots/rofi.png" width=49%/>
-<img src="screenshots/wlogout.png" width=50%/>
+<summary>More</summary>
+<div align="center">
+  <img src="screenshots/rofi.png" width = 40%/>  
+  <img src="screenshots/wlogout.png" width = 40%>
+</div>
 </details>
 
 # Installation
