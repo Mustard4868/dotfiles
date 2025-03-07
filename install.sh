@@ -18,3 +18,4 @@ source ~/.zshrc
 # Install Homebrew packages
 brew install gcc oh-my-posh zsh-autosuggestions
 
+/bin/bash ./update_distro.sh
