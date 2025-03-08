@@ -34,12 +34,14 @@ esac
 sed -i "/^\([[:space:]]*\)col.active_border/s/\$[a-zA-Z]*/\$${color_name}/g" ./hyprland/.config/hypr/hyprland.conf
 
 # Change the color of the active border in the waybar theme, and change the icon.
-icon_path="$PWD/hyprland/.config/waybar/icons/$icon"
-sed -i "s|background-image: url('.*/icons/[^']*');|background-image: url('$icon_path');|g" ./hyprland/.config/waybar/style.css
+waybar_icon_path="$PWD/hyprland/.config/waybar/icons/$icon"
+sed -i "s|background-image: url('.*/icons/[^']*');|background-image: url('$waybar_icon_path');|g" ./hyprland/.config/waybar/style.css
 sed -i "s/@define-color secondary @[^;]*;/@define-color secondary @$color_name;/g" ./hyprland/.config/waybar/style.css
 
 # Change the border color of rofi
 sed -i "s/border-col: #[0-9a-fA-F]*/border-col: $COLOR/g" ./hyprland/.local/share/rofi/themes/catppuccin-mocha.rasi
 
 # Change the border color of wlogout
+wlogout_icon_path="$PWD/hyprland/.config/wlogout/icons/$color_name/"
 sed -i "s/border-color: #[0-9a-fA-F]*/border-color: $COLOR/g" ./hyprland/.config/wlogout/style.css
+sed -i -E 's|(background-image: url\(").*/[^/]+/([^/]+\.svg"\);)|\1'"$wlogout_icon_path"'\2|' ./hyprland/.config/wlogout/style.css

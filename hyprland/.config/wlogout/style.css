@@ -10,7 +10,7 @@ window {
 button {
 	margin: 4px;
 	border-radius: 32px;
-	border-color: #89b4fa;
+	border-color: #a6e3a1;
 	text-decoration-color: #cdd6f4;
 	color: #cdd6f4;
 	background-color: #181825;
@@ -28,25 +28,25 @@ button:focus, button:active, button:hover {
 }
 
 #lock {
-    background-image: url("/home/nynke/.config/wlogout/icons/lock.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/lock.svg");
 }
 
 #logout {
-    background-image: url("/home/nynke/.config/wlogout/icons/logout.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/logout.svg");
 }
 
 #suspend {
-    background-image: url("/home/nynke/.config/wlogout/icons/suspend.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/suspend.svg");
 }
 
 #hibernate {
-    background-image: url("/home/nynke/.config/wlogout/icons/hibernate.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/hibernate.svg");
 }
 
 #shutdown {
-    background-image: url("/home/nynke/.config/wlogout/icons/shutdown.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/shutdown.svg");
 }
 
 #reboot {
-    background-image: url("/home/nynke/.config/wlogout/icons/reboot.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/reboot.svg");
 }
