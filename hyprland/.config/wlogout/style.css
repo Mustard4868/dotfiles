@@ -10,7 +10,7 @@ window {
 button {
 	margin: 4px;
 	border-radius: 32px;
-	border-color: #a6e3a1;
+	border-color: #89b4fa;
 	text-decoration-color: #cdd6f4;
 	color: #cdd6f4;
 	background-color: #181825;
@@ -28,25 +28,25 @@ button:focus, button:active, button:hover {
 }
 
 #lock {
-    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/lock.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/blue/lock.svg");
 }
 
 #logout {
-    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/logout.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/blue/logout.svg");
 }
 
 #suspend {
-    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/suspend.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/blue/suspend.svg");
 }
 
 #hibernate {
-    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/hibernate.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/blue/hibernate.svg");
 }
 
 #shutdown {
-    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/shutdown.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/blue/shutdown.svg");
 }
 
 #reboot {
-    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/green/reboot.svg");
+    background-image: url("/home/mustard/.dotfiles/hyprland/.config/wlogout/icons/blue/reboot.svg");
 }

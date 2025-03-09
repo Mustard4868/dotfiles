@@ -45,3 +45,8 @@ sed -i "s/border-col: #[0-9a-fA-F]*/border-col: $COLOR/g" ./hyprland/.local/shar
 wlogout_icon_path="$PWD/hyprland/.config/wlogout/icons/$color_name/"
 sed -i "s/border-color: #[0-9a-fA-F]*/border-color: $COLOR/g" ./hyprland/.config/wlogout/style.css
 sed -i -E 's|(background-image: url\(").*/[^/]+/([^/]+\.svg"\);)|\1'"$wlogout_icon_path"'\2|' ./hyprland/.config/wlogout/style.css
+
+# Dunstrc
+sed -i -E "s/(frame_color = \")#[0-9a-fA-F]+(\".*)/\1$COLOR\2/" ./hyprland/.config/dunst/dunstrc
+sed -i -E "s/(highlight = \")#[0-9a-fA-F]+(\".*)/\1$COLOR\2/" ./hyprland/.config/dunst/dunstrc
+
