@@ -45,7 +45,7 @@
         "format-icons": "⏻",
         "on-click": "wlogout",
         "tooltip": "true",
-        "tooltip-format": "wlogout"
+        "tooltip-format": "Power"
     },
 
     "battery": {
@@ -59,7 +59,7 @@
         "format-charging": "󰂄 {capacity}%",
         "format-full": "󰂄 {capacity}%",
         "tooltip": "true",
-        "tooltip-format": "{capacity}%"
+        "tooltip-format": "Estimated Time Remaining: {time}"
     },
 
     "clock": {
