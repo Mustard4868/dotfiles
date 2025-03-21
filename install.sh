@@ -16,6 +16,6 @@ stow wallpapers --adopt && stow hyprland --adopt
 source ~/.zshrc
 
 # Install Homebrew packages
-brew install gcc oh-my-posh zsh-autosuggestions
+brew install gcc oh-my-posh zsh-autosuggestions zsh-fast-syntax-highlighting
 
 /bin/bash ./update_distro.sh

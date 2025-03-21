@@ -46,7 +46,8 @@ eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppucc
 
 # Autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+# Syntax
+source $(brew --prefix)/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
