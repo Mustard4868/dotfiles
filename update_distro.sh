@@ -12,21 +12,48 @@ echo "3) EndeavourOS"
 
 read -r option
 
+echo "Select an option (1-4):"
+echo "1) Blue"
+echo "2) Green"
+echo "3) Mauve"
+echo "4) Red"
+
+read -r colors
+
 case $option in
     2)  # Manjaro
-        COLOR="#a6e3a1" # Green
-        color_name="green"
+        #COLOR="#a6e3a1" # Green
+        #color_name="green"
         icon="manjaro-mocha.png"
         ;;
     3)  # EndeavourOS
-        COLOR="#cba6f7" # Mauve
-        color_name="mauve"
+        #COLOR="#cba6f7" # Mauve
+        #color_name="mauve"
         icon="endeavouros-mocha.png"
         ;;
     *)  # Arch
-        COLOR="#89b4fa" # Blue  
-        color_name="blue"
+        #COLOR="#89b4fa" # Blue  
+        #color_name="blue"
         icon="arch-mocha.png"
+        ;;
+esac
+
+case $colors in
+    1)  # Blue
+        COLOR="#89b4fa"
+        color_name="blue"
+        ;;
+    2)  # Green
+        COLOR="#a6e3a1"
+        color_name="green"
+        ;;
+    3)  # Mauve
+        COLOR="#cba6f7"
+        color_name="mauve"
+        ;;
+    4)  # Red
+        COLOR="#ed8796"
+        color_name="red"
         ;;
 esac
 

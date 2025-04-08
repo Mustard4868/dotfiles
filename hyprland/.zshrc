@@ -29,6 +29,9 @@ alias ssh="kitten ssh"
 alias vi="nvim"
 alias vim="nvim"
 
+alias rm="gio trash" #NEVER AGAIN
+alias gpp="g++"
+
 # Keybinds
 bindkey "^[[3~" delete-char
 
