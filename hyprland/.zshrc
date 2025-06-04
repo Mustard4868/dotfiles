@@ -59,3 +59,5 @@ path=('/home/mustard/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+export PATH=$PATH:/home/nynke/.spicetify
