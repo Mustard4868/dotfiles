@@ -3,7 +3,7 @@
     padding-top: 1px;
     padding-left: 4px;
     margin-right: 3px;
-    font-family: 'Noto Sans ExtraBold';
+    font-family: "Noto Sans ExtraBold";
     color: @text;
 }
 
@@ -18,7 +18,7 @@ tooltip {
     background: none;
 }
 
-#clock, #tray, #pulseaudio {
+#clock {
     background-color: @base;
     padding: 8px;
     border-radius: 13px;
@@ -32,10 +32,6 @@ tooltip {
 }
 
 #battery {
-    background-color: @base;
-    padding: 8px 14px 8px 14px;
-    border-radius: 13px;
-    border: 3px solid @secondary;
     color: @green;
 }
 
@@ -49,7 +45,7 @@ tooltip {
 
 #battery.critical:not(.charging) {
     animation-name: blink;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
     animation-timing-function: steps(30);
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -57,12 +53,18 @@ tooltip {
 
 #workspaces {
     background-color: @base;
+    color: @text;
+    box-shadow: none;
+    text-shadow: none;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 4px;
     border-radius: 13px;
     border: 3px solid @secondary;
 }
 
 #custom-power {
-    background-image: url('/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha.png');
+    background-image: url("/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha.png");
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,4 +72,11 @@ tooltip {
     border-radius: 13px;
     border: 3px solid @secondary;
     padding: 8px 14px 8px 14px;
+}
+
+.modules-right {
+    background-color: @base;
+    border-radius: 13px;
+    border: 3px solid @secondary;
+    padding: 8px;
 }

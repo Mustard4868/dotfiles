@@ -1,88 +1,81 @@
-//   █     █░ ▄▄▄     ▓██   ██▓ ▄▄▄▄    ▄▄▄       ██▀███  
+//   █     █░ ▄▄▄     ▓██   ██▓ ▄▄▄▄    ▄▄▄       ██▀███
 //  ▓█░ █ ░█░▒████▄    ▒██  ██▒▓█████▄ ▒████▄    ▓██ ▒ ██▒
 //  ▒█░ █ ░█ ▒██  ▀█▄   ▒██ ██░▒██▒ ▄██▒██  ▀█▄  ▓██ ░▄█ ▒
-//  ░█░ █ ░█ ░██▄▄▄▄██  ░ ▐██▓░▒██░█▀  ░██▄▄▄▄██ ▒██▀▀█▄  
+//  ░█░ █ ░█ ░██▄▄▄▄██  ░ ▐██▓░▒██░█▀  ░██▄▄▄▄██ ▒██▀▀█▄
 //  ░░██▒██▓  ▓█   ▓██▒ ░ ██▒▓░░▓█  ▀█▓ ▓█   ▓██▒░██▓ ▒██▒
 //  ░ ▓░▒ ▒   ▒▒   ▓▒█░  ██▒▒▒ ░▒▓███▀▒ ▒▒   ▓▒█░░ ▒▓ ░▒▓░
 //    ▒ ░ ░    ▒   ▒▒ ░▓██ ░▒░ ▒░▒   ░   ▒   ▒▒ ░  ░▒ ░ ▒░
-//    ░   ░    ░   ▒   ▒ ▒ ░░   ░    ░   ░   ▒     ░░   ░ 
-//      ░          ░  ░░ ░      ░            ░  ░   ░     
-//                     ░ ░           ░                    
+//    ░   ░    ░   ▒   ▒ ▒ ░░   ░    ░   ░   ▒     ░░   ░
+//      ░          ░  ░░ ░      ░            ░  ░   ░
+//                     ░ ░           ░
 {
-    "layer": "top",
-    "spacing": 2,
-    "width": "",
-    "height": "",
+  "layer": "top",
+  "spacing": 2,
+  "width": "",
+  "height": "",
 
-    "modules-left": [
-        "custom/power",
-        "custom/badge",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "tray",
-        "pulseaudio",
-        "battery"
-    ],
+  "modules-left": ["custom/power", "custom/badge", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "pulseaudio", "battery"],
 
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "default": "○",
-            "active": "●"
-        },
-        "persistent-workspaces": {
-            "*": 3
-        }
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+	    "active": "",
+      //"default": "○",
+      //"active": "●"
     },
-
-    "custom/power": {
-        //"format": "{icon}",
-        "format":"   ",
-        "format-icons": "⏻",
-        "on-click": "wlogout",
-        "tooltip": "true",
-        "tooltip-format": "Power"
-    },
-
-    "battery": {
-        "bat": "BAT0",
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-icons": ["󰂄", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "format-charging": "󰂄 {capacity}%",
-        "format-full": "󰂄 {capacity}%",
-        "tooltip": "true",
-        "tooltip-format": "Estimated Time Remaining\n{time}",
-        "tooltip-format-charging": "Time Remaining Until Full\n{time} ({power}W)"
-    },
-
-    "clock": {
-        "format": "{:%H:%M}",
-        "tooltip": "true",
-        "tooltip-format": "{:%A, %d %B %Y}"
-    },
-
-    "pulseaudio": {
-        //"scroll-step": 1,
-        "format": "{icon}    {volume}%",
-        "format-bluetooth": "{icon}    {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
-        },
-        "on-click": "pavucontrol"
+    "persistent-workspaces": {
+      "*": 3
     }
+  },
+
+  "custom/power": {
+    //"format": "{icon}",
+    "format": "   ",
+    "format-icons": "⏻",
+    "on-click": "wlogout -b 5 -T 400 -B 400",
+    "tooltip": "true",
+    "tooltip-format": "Power"
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["󰂄", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "󰂄 {capacity}%",
+    "format-full": "󰂄 {capacity}%",
+    "tooltip": "true",
+    "tooltip-format": "Estimated Time Remaining\n{time}",
+    "tooltip-format-charging": "Time Remaining Until Full\n{time} ({power}W)"
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip": "true",
+    "tooltip-format": "{:%A, %d %B %Y}",
+    "on-click": "hyprctl dispatch exec '[float;size 720 600;center;move 600 60;focus] gnome-calendar'"
+  },
+
+  "pulseaudio": {
+    //"scroll-step": 1,
+    "format": "{icon}    {volume}%",
+    "format-bluetooth": "{icon}    {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    },
+    "on-click": "pavucontrol"
+  }
 }
