@@ -18,13 +18,6 @@ tooltip {
     background: none;
 }
 
-#clock {
-    background-color: @base;
-    padding: 8px;
-    border-radius: 13px;
-    border: 3px solid @secondary;
-}
-
 @keyframes blink {
     to {
         color: @base;
@@ -33,6 +26,7 @@ tooltip {
 
 #battery {
     color: @green;
+    margin-right: 8px;
 }
 
 #battery.warning {
@@ -63,15 +57,24 @@ tooltip {
     border: 3px solid @secondary;
 }
 
+#workspaces button.visible {
+    color: @subtext1;
+}
+
+#window {
+    min-width: 80px;
+}
+
 #custom-power {
     background-image: url("/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha.png");
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: @base;
-    border-radius: 13px;
-    border: 3px solid @secondary;
-    padding: 8px 14px 8px 14px;
+    padding: 0 14px 0 14px;
+}
+
+#custom-separator {
+    border-left: 1px solid @text;
 }
 
 .modules-right {
@@ -79,4 +82,13 @@ tooltip {
     border-radius: 13px;
     border: 3px solid @secondary;
     padding: 8px;
+    padding-right: 16px;
+}
+
+.modules-left {
+    background-color: @base;
+    border-radius: 13px;
+    border: 3px solid @secondary;
+    padding: 8px;
+    margin-left: 4px;
 }
