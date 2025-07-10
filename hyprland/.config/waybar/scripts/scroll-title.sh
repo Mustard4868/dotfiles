@@ -6,7 +6,6 @@ last_title=""
 
 while true; do
     title=$(hyprctl activewindow -j | jq -r '.title')
-    title="${title:-No title}"
 
     # Only reset scroll if title changed
     if [[ "$title" != "$last_title" ]]; then
@@ -20,8 +19,14 @@ while true; do
         continue
     fi
 
+    if [[ "$title" == "Untitled" ]]; then
+        echo $(hyprctl activewindow -j | jq -r '.class')
+        sleep 1
+        continue
+    fi
+
     if [[ "$title" == "~" ]]; then
-        echo "Terminal"
+        echo "Kitty"
         sleep 1
         continue
     fi

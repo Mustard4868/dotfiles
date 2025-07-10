@@ -78,6 +78,7 @@
     "tooltip": "true",
     "tooltip-format": "Discharging:\n{time} Remaining.",
     "tooltip-format-charging": "Charging:\n{time} Until Full.",
+    "tooltip-format-full": "Finished Charging.",
   },
 
   "clock": {
