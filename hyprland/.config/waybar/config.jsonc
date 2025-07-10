@@ -14,7 +14,7 @@
   "width": "",
   "height": "",
 
-  "modules-left": ["custom/power", "custom/separator", "hyprland/window"],
+  "modules-left": ["custom/power", "custom/separator", "custom/scrolling"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "tray",
@@ -26,6 +26,12 @@
 
   "custom/separator": {
     "format": "‎", //empty character
+  },
+
+  "custom/scrolling": {
+    "exec": "/home/nynke/.config/waybar/scripts/scroll-title.sh",
+    "return-type": "plain",
+    "format": "{}",
   },
 
   "hyprland/window": {

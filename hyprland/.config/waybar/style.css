@@ -3,7 +3,8 @@
     padding-top: 1px;
     padding-left: 4px;
     margin-right: 3px;
-    font-family: "Noto Sans ExtraBold";
+    font-family: "Noto Sans";
+    font-weight: bold;
     color: @text;
 }
 
@@ -72,6 +73,11 @@ tooltip {
 #custom-separator {
     border-right: 1px solid @text;
     margin-left: 8px;
+}
+
+#custom-scrolling {
+    font-family: "Noto Sans Mono";
+    padding-right: 10px;
 }
 
 .modules-right {
