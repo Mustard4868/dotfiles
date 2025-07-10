@@ -64,13 +64,14 @@
       "warning": 30,
       "critical": 15,
     },
+
     "format": "{icon} {capacity}%",
     "format-icons": ["󰂄", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": "󰂄 {capacity}%",
     "format-full": "󰂄 {capacity}%",
     "tooltip": "true",
-    "tooltip-format": "Estimated Time Remaining\n{time}",
-    "tooltip-format-charging": "Time Remaining Until Full\n{time} ({power}W)",
+    "tooltip-format": "Discharging:\n{time} Remaining.",
+    "tooltip-format-charging": "Charging:\n{time} Until Full.",
   },
 
   "clock": {

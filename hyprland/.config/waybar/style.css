@@ -26,7 +26,6 @@ tooltip {
 
 #battery {
     color: @green;
-    margin-right: 8px;
 }
 
 #battery.warning {
@@ -61,20 +60,18 @@ tooltip {
     color: @subtext1;
 }
 
-#window {
-    min-width: 80px;
-}
-
 #custom-power {
     background-image: url("/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha.png");
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
     padding: 0 14px 0 14px;
+    margin-right: -8px;
 }
 
 #custom-separator {
-    border-left: 1px solid @text;
+    border-right: 1px solid @text;
+    margin-left: 8px;
 }
 
 .modules-right {
