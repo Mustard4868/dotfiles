@@ -5,10 +5,15 @@
     margin-right: 3px;
     font-family: "Noto Sans Mono", "Font Awesome 5 Free";
     font-weight: bold;
-    color: @text;
 }
 
 @define-color secondary @blue;
+
+@keyframes blink {
+    to {
+        color: @base;
+    }
+}
 
 tooltip {
     background-color: @base;
@@ -19,10 +24,22 @@ tooltip {
     background: none;
 }
 
-@keyframes blink {
-    to {
-        color: @base;
-    }
+.modules-right {
+    color: @text;
+    background-color: @base;
+    border-radius: 13px;
+    border: 3px solid @secondary;
+    padding: 8px;
+    padding-right: 16px;
+}
+
+.modules-left {
+    color: @text;
+    background-color: @base;
+    border-radius: 13px;
+    border: 3px solid @secondary;
+    padding: 8px;
+    margin-left: 4px;
 }
 
 #battery {
@@ -47,18 +64,29 @@ tooltip {
 
 #workspaces {
     background-color: @base;
-    color: @text;
-    box-shadow: none;
-    text-shadow: none;
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 4px;
     border-radius: 13px;
     border: 3px solid @secondary;
+    padding-right: 10px;
+    font-size: 20px;
 }
 
-#workspaces button.visible {
-    color: @subtext1;
+#workspaces button {
+    all: unset;
+    padding: 0px 5px;
+    margin: 2px;
+    color: @overlay0;
+    transition: all 0.5s ease;
+}
+
+#workspaces button:hover {
+    border: none;
+    text-shadow: 0px 0px 5px @overlay1;
+    transition: all 0.5s ease;
+}
+
+#workspaces button.active {
+    color: @text;
+    text-shadow: 0px 0px 5px @overlay1;
 }
 
 #custom-power {
@@ -80,28 +108,8 @@ tooltip {
     padding-right: 10px;
 }
 
-#custom-music-warp {
-    font-family: JetBrainsMono Nerd;
-}
-
 #cpu,
 #memory,
 #temperature {
     margin-bottom: 1px;
-}
-
-.modules-right {
-    background-color: @base;
-    border-radius: 13px;
-    border: 3px solid @secondary;
-    padding: 8px;
-    padding-right: 16px;
-}
-
-.modules-left {
-    background-color: @base;
-    border-radius: 13px;
-    border: 3px solid @secondary;
-    padding: 8px;
-    margin-left: 4px;
 }

@@ -74,9 +74,8 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "default": "",
-      "active": "",
-      "visible": "",
+      "empty": "",
+      "default": "",
     },
     "persistent-workspaces": {
       "eDP-1": 3,
