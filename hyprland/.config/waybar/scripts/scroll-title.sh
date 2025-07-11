@@ -40,5 +40,5 @@ while true; do
     scroll="${title}   ${title}"
     printf "%s\n" "${scroll:$pos:$length}"
     pos=$(( (pos + 1) % (${#title} + 3) ))
-    sleep 0.25
+    sleep 0.1
 done

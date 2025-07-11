@@ -3,7 +3,7 @@
     padding-top: 1px;
     padding-left: 4px;
     margin-right: 3px;
-    font-family: "Noto Sans";
+    font-family: "Noto Sans Mono", "Font Awesome 5 Free";
     font-weight: bold;
     color: @text;
 }
@@ -63,21 +63,31 @@ tooltip {
 
 #custom-power {
     background-image: url("/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha.png");
-    background-size: 50%;
+    background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 0 14px 0 14px;
-    margin-right: -8px;
+    padding: 0 10px 0 10px;
+    margin-left: 5px;
 }
 
 #custom-separator {
     border-right: 1px solid @text;
-    margin-left: 8px;
+    margin-right: 5px;
 }
 
 #custom-scrolling {
     font-family: "Noto Sans Mono";
     padding-right: 10px;
+}
+
+#custom-music-warp {
+    font-family: JetBrainsMono Nerd;
+}
+
+#cpu,
+#memory,
+#temperature {
+    margin-bottom: 1px;
 }
 
 .modules-right {

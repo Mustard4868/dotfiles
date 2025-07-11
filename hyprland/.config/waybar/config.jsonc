@@ -19,10 +19,38 @@
   "modules-right": [
     "tray",
     "pulseaudio",
+    "group/hardware",
     "battery",
     "custom/separator",
     "clock",
   ],
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true,
+    },
+    "modules": ["cpu", "memory", "temperature"],
+  },
+
+  "cpu": {
+    "format": "{icon} {usage}%",
+    "format-icons": "",
+    "tooltip": false,
+  },
+
+  "memory": {
+    "format": "{icon} {percentage}%",
+    "format-icons": "",
+    "tooltip": false,
+  },
+
+  "temperature": {
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": "",
+    "tooltip": false,
+  },
 
   "custom/separator": {
     "format": "‎", //empty character
@@ -57,7 +85,7 @@
 
   "custom/power": {
     //"format": "{icon}",
-    "format": "   ",
+    "format": " ",
     "format-icons": "⏻",
     "on-click": "wlogout -b 5 -T 400 -B 400",
     "tooltip": "true",
@@ -70,7 +98,6 @@
       "warning": 30,
       "critical": 15,
     },
-
     "format": "{icon} {capacity}%",
     "format-icons": ["󰂄", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": "󰂄 {capacity}%",
@@ -90,8 +117,8 @@
 
   "pulseaudio": {
     //"scroll-step": 1,
-    "format": "{icon}    {volume}%",
-    "format-bluetooth": "{icon}    {volume}%",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
       "headphones": "",
