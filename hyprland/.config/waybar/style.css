@@ -3,7 +3,9 @@
     padding-top: 1px;
     padding-left: 4px;
     margin-right: 3px;
-    font-family: "Noto Sans Mono", "Font Awesome 5 Free";
+    font-family:
+        Noto Sans Mono,
+        JetBrains Mono NF;
     font-weight: bold;
 }
 
