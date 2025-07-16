@@ -19,7 +19,6 @@
   "modules-right": [
     "tray",
     "pulseaudio",
-    "group/hardware",
     "battery",
     "custom/separator",
     "clock",
