@@ -32,6 +32,8 @@ alias vim="nvim"
 alias rm="gio trash" #NEVER AGAIN
 alias gpp="g++"
 
+alias hyfetch="hyfetch --distro arch"
+
 # Keybinds
 bindkey "^[[3~" delete-char
 
