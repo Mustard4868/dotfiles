@@ -32,7 +32,7 @@ alias vim="nvim"
 alias rm="gio trash" #NEVER AGAIN
 alias gpp="g++"
 
-alias hyfetch="hyfetch --distro arch"
+alias hyfetch="hyfetch --distro $(uname -r | tr -cd '[:alpha:]')"
 
 # Keybinds
 bindkey "^[[3~" delete-char
