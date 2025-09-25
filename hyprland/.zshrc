@@ -26,9 +26,6 @@ alias la="eza --icons -a"
 alias ll="eza --icons -l"
 alias lla="eza --icons -la"
 alias ssh="kitten ssh"
-alias vi="nvim"
-alias vim="nvim"
-
 alias rm="gio trash" #NEVER AGAIN
 alias gpp="g++"
 
