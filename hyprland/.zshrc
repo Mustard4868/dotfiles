@@ -60,3 +60,4 @@ export PATH
 # <<< juliaup initialize <<<
 
 export PATH=$PATH:/home/nynke/.spicetify
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
