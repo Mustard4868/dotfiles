@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "calc,drun,window";
     icon-theme: "Papirus-Dark";
     show-icons: true;
     terminal: "kitty";
@@ -11,6 +11,7 @@ configuration{
     display-run: "   Run ";
     display-window: " 󰕰  Window";
     display-Network: " 󰤨  Network";
+    display-calc: "  Calculator";
     sidebar-mode: true;
     click-to-exit: true;
 }
