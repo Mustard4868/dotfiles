@@ -1,4 +1,4 @@
-configuration{
+configuration {
     modi: "calc,drun,window";
     icon-theme: "Papirus-Dark";
     show-icons: true;
