@@ -21,6 +21,7 @@
     "pulseaudio",
     "battery",
     "custom/separator",
+    "custom/weather",
     "clock",
   ],
 
@@ -59,6 +60,14 @@
     "exec": "/home/nynke/.config/waybar/scripts/scroll-title.sh",
     "return-type": "plain",
     "format": "{}",
+  },
+
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/?format=1' | tr -s ' '",
+    "return-type": "plain",
+    "format": "{}",
+    "interval": 600,
+    "tooltip": "false",
   },
 
   "hyprland/window": {
