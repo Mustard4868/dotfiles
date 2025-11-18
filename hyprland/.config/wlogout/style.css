@@ -8,17 +8,19 @@ window {
 }
 
 button {
-    margin: 4px;
-    border-radius: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+    background-color: #181825;
+    border-radius: 50px;
     border-color: #89b4fa;
     text-decoration-color: #cdd6f4;
     color: #cdd6f4;
-    background-color: #181825;
     border-style: solid;
     border-width: 3px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 40%;
+    margin: 6px;
+    margin-left: 600px;
+    margin-right: 600px;
 }
 
 button:focus,

@@ -95,7 +95,7 @@
     //"format": "{icon}",
     "format": " ",
     "format-icons": "⏻",
-    "on-click": "wlogout -b 5 -T 400 -B 400",
+    "on-click": "wlogout -b 1",
     "tooltip": "true",
     "tooltip-format": "Power",
   },
