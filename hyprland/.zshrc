@@ -61,3 +61,8 @@ export PATH
 
 export PATH=$PATH:/home/nynke/.spicetify
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/nynke/.lmstudio/bin"
+# End of LM Studio CLI section
+
