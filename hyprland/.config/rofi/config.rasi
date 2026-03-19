@@ -1,5 +1,5 @@
 configuration {
-    modi: "drun,find:~/.local/share/rofi/finder.sh,window";
+    modi: "drun,find:~/.config/rofi/finder.sh,window";
     icon-theme: "Papirus-Dark";
     show-icons: true;
     terminal: "kitty";
