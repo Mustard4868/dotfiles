@@ -1,5 +1,5 @@
 configuration {
-    modi: "calc,drun,window";
+    modi: "drun,find:~/.local/share/rofi/finder.sh,window";
     icon-theme: "Papirus-Dark";
     show-icons: true;
     terminal: "kitty";
@@ -7,11 +7,10 @@ configuration {
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: "   Apps ";
+    display-drun: "   Apps ";
     display-run: "   Run ";
-    display-window: " 󰕰  Window";
-    display-Network: " 󰤨  Network";
-    display-calc: "  Calculator";
+    display-window: " 󱂬  Windows ";
+    display-find: "   Find ";
     sidebar-mode: true;
     click-to-exit: true;
 }
@@ -19,6 +18,6 @@ configuration {
 @theme "catppuccin-mocha"
 
 listview {
-    columns: 1;
+    columns: 2;
     dynamic: true;
 }

@@ -21,7 +21,6 @@
     "pulseaudio",
     "battery",
     "custom/separator",
-    "custom/weather",
     "clock",
   ],
 
