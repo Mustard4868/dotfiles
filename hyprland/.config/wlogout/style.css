@@ -13,7 +13,7 @@ button {
     background-size: 50px;
     background-color: #181825;
     border-radius: 50px;
-    border-color: #89b4fa;
+    border-color: #cba6f7;
     text-decoration-color: #cdd6f4;
     color: #cdd6f4;
     border-style: solid;
@@ -32,21 +32,21 @@ button:hover {
 }
 
 #lock {
-    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/blue/lock.svg");
+    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/mauve/lock.svg");
 }
 
 #logout {
-    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/blue/logout.svg");
+    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/mauve/logout.svg");
 }
 
 #suspend {
-    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/blue/suspend.svg");
+    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/mauve/suspend.svg");
 }
 
 #shutdown {
-    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/blue/shutdown.svg");
+    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/mauve/shutdown.svg");
 }
 
 #reboot {
-    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/blue/reboot.svg");
+    background-image: url("/home/nynke/.dotfiles/hyprland/.config/wlogout/icons/mauve/reboot.svg");
 }
