@@ -42,6 +42,8 @@ end)
 hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
 hl.env("XCURSOR_SIZE", "32")
 hl.env("XCURSOR_THEME", "catppuccin-mocha-dark-cursors")
+hl.env("HYPRCURSOR_SIZE", "32")
+hl.env("HYPRCURSOR_THEME", "catppuccin-mocha-dark-cursors")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
@@ -83,7 +85,7 @@ hl.config({
         },
         blur = {
             enabled   = true,
-            size      = 3,
+            size      = 4,
             passes    = 2,
             vibrancy  = 0.1696,
         },
@@ -95,14 +97,14 @@ hl.config({
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
-hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
-hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
-hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}       } })
-hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}    } })
-hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
+hl.curve("easeOutQuint", { type = "bezier", points = { {0.23, 1}, {0.32, 1} } })
+hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1} } })
+hl.curve("linear", { type = "bezier", points = { {0, 0}, {1, 1} } })
+hl.curve("almostLinear", { type = "bezier", points = { {0.5, 0.5}, {0.75, 1} } })
+hl.curve("quick", { type = "bezier", points = { {0.15, 0}, {0.1, 1} } })
 
 -- Default springs
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
+hl.curve("easy", { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
 
 hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
 hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
@@ -189,14 +191,24 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("wlogout -b 1"))
-hl.bind(mainMod .. " + SHIFT_L + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + SHIFT_L + B", hl.dsp.exec_cmd("pkill waybar && waybar"))
-hl.bind(mainMod .. " + SHIFT_L + F", function ()
-    hl.dsp.window.float({ action = "toggle" })
-    hl.dsp.window.resize({ x = "942", y = "500" })
-    hl.dsp.window.center()
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("pkill waybar && waybar"))
+hl.bind(mainMod .. " + SHIFT + F", function ()
+    hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+    hl.dispatch(hl.dsp.window.resize({ x = "942", y = "500" }))
+    hl.dispatch(hl.dsp.window.center())
 end)
 
+-- Screenshots
+hl.bind("Print",
+    hl.dsp.exec_cmd(
+    "grim - | tee \"$GRIM_DEFAULT_DIR/screenshot-$(date +'%Y%m%d-%H%M%S').png\" | wl-copy && notify-send \"Screenshot\" \"Saved to $GRIM_DEFAULT_DIR\""))
+hl.bind(mainMod .. " + SHIFT + S",
+    hl.dsp.exec_cmd(
+    "sh -c 'grim -g \"$(slurp)\" - | { read -r first_byte && [ -n \"$first_byte\" ] && (echo \"$first_byte\"; cat) | tee \"$GRIM_DEFAULT_DIR/screenshot-$(date +'%Y%m%d-%H%M%S').png\" | wl-copy; }' && notify-send \"Screenshot\" \"Saved to $GRIM_DEFAULT_DIR\""))
+hl.bind(mainMod .. " + CTRL + S",
+    hl.dsp.exec_cmd(
+    "grim -g \"$(hyprctl activewindow -j | jq -r '[.at[0]-2, .at[1]-2, .size[0]+4, .size[1]+4] | @sh' | tr -d \"'\" | awk '{print $1\",\"$2, $3\"x\"$4}')\" - | tee \"$GRIM_DEFAULT_DIR/screenshot-$(date +'%Y%m%d-%H%M%S').png\" | wl-copy && notify-send \"Screenshot\" \"Saved to $GRIM_DEFAULT_DIR\""))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -269,16 +281,10 @@ hl.window_rule({
     no_focus = true,
 })
 
-hl.window_rule({
-    name  = "move-hyprland-run",
-    match = { class = "hyprland-run" },
+local custom_opacity = "0.8"
 
-    move  = "20 monitor_h-120",
-    float = true,
-})
-
-hl.window_rule({ match = { initial_class = "kitty" }, opacity = "0.9" })
-hl.window_rule({ match = { initial_class = "code" }, opacity = "0.9" })
-hl.window_rule({ match = { initial_class = "spotify" }, opacity = "0.9" })
-hl.window_rule({ match = { initial_class = "dev.zed.Zed" }, opacity = "0.9" })
+hl.window_rule({ match = { initial_class = "kitty" }, opacity = custom_opacity })
+hl.window_rule({ match = { initial_class = "code" }, opacity = custom_opacity })
+hl.window_rule({ match = { initial_class = "spotify" }, opacity = custom_opacity })
+hl.window_rule({ match = { initial_class = "dev.zed.Zed" }, opacity = custom_opacity })
 hl.window_rule({ match = { initial_class = "discord" }, opacity = "0.9" })
