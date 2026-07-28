@@ -93,6 +93,11 @@ hl.config({
     animations = {
         enabled = true,
     },
+
+    ecosystem = {
+        no_update_news = true,
+        no_donation_nag = true,
+    },
 })
 
 hl.config({
@@ -125,12 +130,14 @@ hl.config({
         kb_options = "",
         kb_rules   = "",
 
+        numlock_by_default = true,
+
         follow_mouse = 1,
 
         sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
-            natural_scroll = false,
+            natural_scroll = true,
         },
     },
 })
