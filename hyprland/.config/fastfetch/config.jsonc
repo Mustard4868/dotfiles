@@ -1,9 +1,6 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "display": {
-    "key": {
-      "width": 12,
-    },
     "brightColor": true,
   },
   "modules": [
@@ -13,16 +10,27 @@
     "kernel",
     "host",
     "uptime",
+    "break",
     "packages",
     "shell",
-    "de",
-    "wm",
-    "icons",
-    "cursor",
     "terminal",
+    {
+      "key": "Display Manager",
+      "type": "lm"
+    },
+    {
+      "key": "Window Manager",
+      "type": "wm"
+    },
+    "break",
     "cpu",
     "gpu",
-    "memory",
+    {
+      "key": "RAM",
+      "type": "memory"
+    },
+    "break",
+    "disk",
     "break",
     "colors",
   ],
