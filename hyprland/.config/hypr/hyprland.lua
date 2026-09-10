@@ -28,7 +28,7 @@ hl.monitor({
 -- Startup Applications
 hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-    hl.exec_cmd("swaybg -i $HOME/Pictures/Wallpapers/satellite.png -m fill")
+    hl.exec_cmd("swaybg -i $HOME/Pictures/Wallpapers/artemis-ii-window.jpg -m fill")
     hl.exec_cmd("dunst & waybar")
     hl.exec_cmd("nm-applet --no-agent")
     hl.exec_cmd("udiskie -t")

@@ -18,6 +18,8 @@ hl.bind(mainMod .. " + SHIFT + F", function ()
     hl.dispatch(hl.dsp.window.center())
 end)
 
+hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("rofi -modi emoji -show emoji"))
+
 -- Screenshots
  hl.bind("Print",
     hl.dsp.exec_cmd(

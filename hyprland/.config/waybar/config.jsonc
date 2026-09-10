@@ -14,7 +14,7 @@
   "width": "",
   "height": "",
 
-  "modules-left": ["custom/power", "custom/separator", "custom/scrolling"],
+  "modules-left": ["custom/sysinfo", "custom/separator", "custom/scrolling"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "tray",
@@ -97,6 +97,15 @@
     "on-click": "wlogout -b 1",
     "tooltip": "true",
     "tooltip-format": "Power",
+  },
+
+  "custom/sysinfo": {
+    "format": " ",
+    "on-click": "kitty -e --hold hyfetch",
+    "tooltip": "true",
+    "exec": "uname -sr",
+    "tooltip-format": "{}",
+    "interval": "once"
   },
 
   "battery": {
