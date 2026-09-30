@@ -60,8 +60,8 @@ hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 -- Configuration
 hl.config({
     general = {
-        gaps_in  = 4,
-        gaps_out = 8,
+        gaps_in  = 3,
+        gaps_out = 6,
         border_size = 3,
         col = {
             active_border   = colors.mauve,
@@ -73,20 +73,21 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 10,
+        rounding = 20,
         rounding_power = 2,
+        border_part_of_window = false,
+        dim_special = 0,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 1.0,
+        active_opacity = 1.0,
         inactive_opacity = 1.0,
         shadow = {
-            enabled      = false,
+            enabled = false,
         },
         blur = {
-            enabled   = true,
-            size      = 4,
-            passes    = 2,
-            vibrancy  = 0.1696,
+            enabled = true,
+            size = 4,
+            passes  = 2,
         },
     },
 

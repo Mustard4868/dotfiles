@@ -14,42 +14,22 @@
   "width": "",
   "height": "",
 
-  "modules-left": ["custom/sysinfo", "custom/separator", "custom/scrolling"],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-left": [
+    "custom/sysinfo",
+    "custom/separator",
+    "custom/scrolling"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
   "modules-right": [
     "tray",
     "pulseaudio",
     "battery",
     "custom/separator",
+    "custom/weather",
     "clock",
   ],
-
-  "group/hardware": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": true,
-    },
-    "modules": ["cpu", "memory", "temperature"],
-  },
-
-  "cpu": {
-    "format": "{icon} {usage}%",
-    "format-icons": "",
-    "tooltip": false,
-  },
-
-  "memory": {
-    "format": "{icon} {percentage}%",
-    "format-icons": "",
-    "tooltip": false,
-  },
-
-  "temperature": {
-    "format": "{icon} {temperatureC}°C",
-    "format-icons": "",
-    "tooltip": false,
-  },
 
   "custom/separator": {
     "format": "‎", //empty character
@@ -62,10 +42,11 @@
   },
 
   "custom/weather": {
-    "exec": "curl 'https://wttr.in/?format=1' | tr -s ' '",
+    //first fetch location using ipinfo.io, then fetch weather with wttr.in
+    "exec": "city=$(curl -s 'https://ipinfo.io/city'); curl -s \"https://wttr.in/${city}?format=1\" | tr -s ' '",
     "return-type": "plain",
     "format": "{}",
-    "interval": 600,
+    "interval": 1800,
     "tooltip": "false",
   },
 
@@ -88,15 +69,6 @@
     "persistent-workspaces": {
       "*": 3,
     },
-  },
-
-  "custom/power": {
-    //"format": "{icon}",
-    "format": " ",
-    "format-icons": "⏻",
-    "on-click": "wlogout -b 1",
-    "tooltip": "true",
-    "tooltip-format": "Power",
   },
 
   "custom/sysinfo": {
@@ -130,10 +102,10 @@
   },
 
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%H:%M} ",
     "tooltip": "true",
     "tooltip-format": "{:%A, %d %B %Y}",
-    "on-click": "hyprctl dispatch exec '[float;size 720 600;center;move 600 60;focus] gnome-calendar'",
+    "on-click": "firefox --new-tab 'https://calendar.proton.me'",
   },
 
   "pulseaudio": {

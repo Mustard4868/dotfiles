@@ -1,8 +1,8 @@
 @import "mocha.css";
 * {
-    padding-top: 1px;
-    padding-left: 4px;
+    margin-left: 3px;
     margin-right: 3px;
+    padding: 1px;
     font-family:
         Noto Sans Mono,
         JetBrains Mono NF;
@@ -26,22 +26,12 @@ tooltip {
     background: none;
 }
 
-.modules-right {
+.modules-left, .modules-right {
     color: @text;
     background-color: @base;
-    border-radius: 13px;
+    border-radius: 40px;
     border: 3px solid @secondary;
-    padding: 8px;
-    padding-right: 16px;
-}
-
-.modules-left {
-    color: @text;
-    background-color: @base;
-    border-radius: 13px;
-    border: 3px solid @secondary;
-    padding: 8px;
-    margin-left: 4px;
+    padding: 2px;
 }
 
 #battery {
@@ -66,9 +56,9 @@ tooltip {
 
 #workspaces {
     background-color: @base;
-    border-radius: 13px;
+    border-radius: 40px;
     border: 3px solid @secondary;
-    padding-right: 10px;
+    padding-right: 8px;
     font-size: 20px;
 }
 
@@ -93,25 +83,20 @@ tooltip {
 
 #custom-sysinfo {
     background-image: url("/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha-mauve.png");
-    background-size: 80%;
+    background-size: 75%;
     background-position: center;
     background-repeat: no-repeat;
     padding: 0 10px 0 10px;
-    margin-left: 5px;
+    margin-left: 8px;
+    margin-right: -4px;
 }
 
 #custom-separator {
     border-right: 1px solid @text;
-    margin-right: 5px;
+    margin: 6px;
 }
 
 #custom-scrolling {
     font-family: "Noto Sans Mono";
     padding-right: 10px;
-}
-
-#cpu,
-#memory,
-#temperature {
-    margin-bottom: 1px;
 }
