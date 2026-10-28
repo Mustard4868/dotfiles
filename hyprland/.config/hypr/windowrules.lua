@@ -28,4 +28,12 @@ hl.window_rule({ match = { initial_class = "kitty" }, opacity = custom_opacity }
 hl.window_rule({ match = { initial_class = "code" }, opacity = custom_opacity })
 hl.window_rule({ match = { initial_class = "spotify" }, opacity = custom_opacity })
 hl.window_rule({ match = { initial_class = "dev.zed.Zed" }, opacity = custom_opacity })
-hl.window_rule({ match = { initial_class = "discord" }, opacity = "0.9" })
+hl.window_rule({ match = { initial_class = "discord" }, opacity = custom_opacity })
+
+hl.window_rule({ match = { fullscreen = true }, opacity = 1 })
+
+hl.layer_rule({
+    match = { namespace = "rofi" },
+    blur = true,
+    animation = "slide left",
+})

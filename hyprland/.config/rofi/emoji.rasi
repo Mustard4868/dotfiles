@@ -1,0 +1,12 @@
+configuration {
+    modi: "emoji";
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    disable-history: false;
+    hide-scrollbar: true;
+    display-emoji: " Emojis ";
+    click-to-exit: true;
+    show-icons: false;
+}
+
+@theme "catppuccin-mocha"

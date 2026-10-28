@@ -25,13 +25,23 @@ hl.monitor({
     scale    = "1",
 })
 
+-- SystemD
+hl.on("hyprland.start", function()
+    hl.exec_cmd("systemctl --user start hyprland-session.target")
+end)
+
+hl.on("hyprland.shutdown", function()
+    os.execute("systemctl --user stop graphical-session.target")
+end)
+
 -- Startup Applications
 hl.on("hyprland.start", function()
     hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
     hl.exec_cmd("swaybg -i $HOME/Pictures/Wallpapers/artemis-ii-window.jpg -m fill")
-    hl.exec_cmd("dunst & waybar")
+    hl.exec_cmd("dunst")
     hl.exec_cmd("nm-applet --no-agent")
     hl.exec_cmd("udiskie -t")
+    hl.exec_cmd("warp-taskbar")
     hl.exec_cmd("dex -a -s ~/.config/autostart")
     hl.exec_cmd("~/.config/hypr/scripts/get-album-art.sh")
     hl.exec_cmd(
@@ -76,9 +86,7 @@ hl.config({
         rounding = 20,
         rounding_power = 2,
         border_part_of_window = false,
-        dim_special = 0,
 
-        -- Change transparency of focused and unfocused windows
         active_opacity = 1.0,
         inactive_opacity = 1.0,
         shadow = {

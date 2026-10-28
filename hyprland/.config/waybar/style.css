@@ -1,12 +1,10 @@
 @import "mocha.css";
 * {
-    margin-left: 3px;
-    margin-right: 3px;
-    padding: 1px;
     font-family:
         Noto Sans Mono,
         JetBrains Mono NF;
     font-weight: bold;
+
 }
 
 @define-color secondary @mauve;
@@ -17,46 +15,72 @@
     }
 }
 
-tooltip {
-    background-color: @base;
-    color: @text;
-}
-
 #waybar {
     background: none;
 }
 
-.modules-left, .modules-right, #workspaces {
-    color: @text;
+.modules-left, .modules-center, .modules-right {
     background-color: @mantle;
-    border-radius: 40px;
+    border-radius: 30px;
     border: 3px solid @secondary;
-    padding: 2px;
-    font-size: 14px;
+}
+
+menu, tooltip {
+    border: 3px solid @secondary;
+	background-color: @mantle;
+	color: @text;
+}
+
+menuitem:hover {
+    color: @mauve;
+}
+
+#taskbar {
+    background-color: @surface0;
+    border-radius: 30px;
+    margin: 3px;
+}
+
+#taskbar button {
+    border-radius: 50%;
+}
+
+#taskbar button.active {
+    background-color: @surface2;
 }
 
 #workspaces {
-    padding-right: 8px;
-    font-size: 20px;
+    margin-right: 10px;
+    font-size: 10px;
 }
 
 #workspaces button {
     all: unset;
-    padding: 0px 5px;
-    margin: 2px;
-    color: @overlay0;
+    color: @text;
     transition: all 0.5s ease;
+    margin: 10px;
 }
 
 #workspaces button:hover {
     border: none;
-    text-shadow: 0px 0px 5px @overlay1;
+    text-shadow: 0px 0px 10px @text;
     transition: all 0.5s ease;
 }
 
 #workspaces button.active {
-    color: @text;
-    text-shadow: 0px 0px 5px @overlay1;
+    text-shadow: 0px 0px 10px @text;
+}
+
+#tray, #utilities, #extras, #custom-weather, #custom-search {
+    background-color: @surface0;
+    border-radius: 30px;
+    margin: 3px;
+    padding: 9px;
+}
+
+#utilities, #custom-search {
+    color: @base;
+    background-color: @mauve;
 }
 
 #battery {
@@ -77,23 +101,4 @@ tooltip {
     animation-timing-function: steps(30);
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-#custom-sysinfo {
-    background-image: url("/home/nynke/.dotfiles/hyprland/.config/waybar/icons/arch-mocha-mauve.png");
-    background-size: 75%;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 0 10px 0 10px;
-    margin-left: 8px;
-    margin-right: -4px;
-}
-
-#custom-separator {
-    border-right: 1px solid @text;
-    margin: 6px;
-}
-
-#custom-scrolling {
-    padding-right: 10px;
 }

@@ -9,16 +9,15 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("wlogout -b 1"))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("pkill waybar && waybar"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("systemctl --user restart waybar"))
 hl.bind(mainMod .. " + SHIFT + F", function ()
     hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
     hl.dispatch(hl.dsp.window.resize({ x = "942", y = "500" }))
     hl.dispatch(hl.dsp.window.center())
 end)
 
-hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("rofi -modi emoji -show emoji"))
+hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd("rofi -config ~/.config/rofi/emoji.rasi -show emoji"))
 
 -- Screenshots
  hl.bind("Print",

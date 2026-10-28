@@ -13,50 +13,96 @@
   "spacing": 2,
   "width": "",
   "height": "",
+  "margin": "0, 6, 0, 6",
+  "reload_style_on_change": true,
 
   "modules-left": [
-    "custom/sysinfo",
-    "custom/separator",
-    "custom/scrolling"
+    "custom/search",
+    "wlr/taskbar",
+    "hyprland/workspaces",
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "clock",
+    "custom/weather",
   ],
   "modules-right": [
     "tray",
-    "pulseaudio",
-    "battery",
-    "custom/separator",
-    "custom/weather",
-    "clock",
+    "group/utilities",
   ],
 
-  "custom/separator": {
-    "format": "‎", //empty character
+  "group/utilities": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "battery",
+      "custom/power",
+    ]
+  },
+
+  "custom/power": {
+    "format": " ⏻ ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "hyprshutdown && poweroff",
+      "reboot": "hyprshutdown && reboot",
+      "suspend": "hyprlock & sleep 3 && systemctl suspend",
+      "logout": "hyprshutdown --vt 2",
+      "lock": "hyprlock",
+    },
+  },
+
+  "custom/notifications": {
+    "format": " 󱅫 ",
+    "exec": "dunstctl count history",
+    "tooltip-format": "{text} notification(s)",
+    "exec-if": "exit 0",
   },
 
   "custom/scrolling": {
-    "exec": "/home/nynke/.config/waybar/scripts/scroll-title.sh",
+    "max-length": 25,
+    "align": 0,
+    "exec": "~/.config/waybar/scripts/scroll-title.sh",
     "return-type": "plain",
     "format": "{}",
   },
 
   "custom/weather": {
     //first fetch location using ipinfo.io, then fetch weather with wttr.in
-    "exec": "city=$(curl -s 'https://ipinfo.io/city'); curl -s \"https://wttr.in/${city}?format=1\" | tr -s ' '",
+    "exec": "~/.config/waybar/scripts/weather.sh",
     "return-type": "plain",
     "format": "{}",
     "interval": 1800,
-    "tooltip": "false",
+    "tooltip": false,
+    "on-click": "xdg-open 'https://duckduckgo.com/?q=weather'",
   },
 
-  "hyprland/window": {
-    "format": "{title}",
-    "rewrite": {
-      "": "Desktop",
-      "~": "kitty",
-      "^(.{30}).+$": "$1...",
-    },
+  "custom/pacman": {
+    "format": "  ",
+    "exec": "checkupdates | wc -l",
+    "tooltip-format": "{text} update(s) available",
+    "exec-if": "exit 0",
+  },
+
+  "custom/search": {
+    "format": " Search",
+    "on-click": "rofi -show drun"
+  },
+
+  "custom/menu": {
+    "format": " 󰍜 "
+  },
+
+  "wlr/taskbar": {
+    "icon-size": 20,
+    "on-click": "activate",
+  },
+
+  "tray": {
+    "reverse-direction": true,
+    "spacing": 5,
+    "icon-size": 20,
   },
 
   "hyprland/workspaces": {
@@ -65,19 +111,13 @@
       "empty": "",
       "default": "",
       "active": "",
+      "special": "",
     },
     "persistent-workspaces": {
-      "*": 3,
+      "*": 5,
     },
-  },
-
-  "custom/sysinfo": {
-    "format": " ",
-    "on-click": "kitty -e --hold hyfetch",
-    "tooltip": "true",
-    "exec": "uname -sr",
-    "tooltip-format": "{}",
-    "interval": "once"
+    "show-special": true,
+    "special-visible-only": true,
   },
 
   "battery": {
@@ -95,23 +135,29 @@
     "format-icons": ["󰂄", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": "󰂄 {capacity}%",
     "format-full": "󰂄 {capacity}%",
-    "tooltip": "true",
+    "tooltip": true,
     "tooltip-format": "Discharging:\n{time} Remaining.",
     "tooltip-format-charging": "Charging:\n{time} Until Full.",
     "tooltip-format-full": "Finished Charging.",
   },
 
   "clock": {
-    "format": "{:%H:%M} ",
-    "tooltip": "true",
-    "tooltip-format": "{:%A, %d %B %Y}",
-    "on-click": "firefox --new-tab 'https://calendar.proton.me'",
+    "format": " {:%b %d, %H:%M}",
+    "on-click": "xdg-open 'https://calendar.proton.me'",
+    "timezone-tooltip-format": " {:%H:%M(%Z)} ",
+    "timezones": [
+      "",
+      "UTC",
+      "US/Central"
+    ],
+    "tooltip": true,
+    "tooltip-format": "{tz_list}",
   },
 
   "pulseaudio": {
     "scroll-step": 5,
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon}  {volume}%",
+    "format": "{icon} ",
+    "format-bluetooth": "{icon} ",
     "format-muted": "",
     "format-icons": {
       "headphones": "",
@@ -122,6 +168,8 @@
       "car": "",
       "default": ["", ""],
     },
+    "tooltip-format": "{desc}\nVolume: {volume}%",
     "on-click": "pavucontrol",
   },
+
 }

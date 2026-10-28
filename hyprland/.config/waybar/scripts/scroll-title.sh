@@ -1,6 +1,6 @@
 #!/bin/bash
 
-length=40
+length=26
 pos=0
 last_title=""
 
