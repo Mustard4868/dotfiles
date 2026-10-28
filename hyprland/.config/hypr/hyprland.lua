@@ -41,7 +41,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("dunst")
     hl.exec_cmd("nm-applet --no-agent")
     hl.exec_cmd("udiskie -t")
-    hl.exec_cmd("warp-taskbar")
     hl.exec_cmd("dex -a -s ~/.config/autostart")
     hl.exec_cmd("~/.config/hypr/scripts/get-album-art.sh")
     hl.exec_cmd(
